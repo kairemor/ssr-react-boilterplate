@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { hydrate } from 'react-dom';
 import { Provider } from 'react-redux';
+import { I18nextProvider } from 'react-i18next';
 import configureStore from './redux/configureStore';
 import App from './components/app';
+import './i18n';
 
 // Read the state sent with markup
 const state = window.__STATE__;
@@ -21,7 +23,9 @@ const store = configureStore(state);
 
 hydrate(
   <Provider store={store} >
-    <App />
+    <Suspense fallback={(<div>Loading</div>)}>
+      <App />
+    </Suspense>
   </Provider>,
   document.querySelector('#app')
 )

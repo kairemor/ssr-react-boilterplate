@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import configureStore from './redux/configureStore';
 import App from './components/app';
+import './i18n';
 
 // Create a fresh store 
 const store = configureStore();
