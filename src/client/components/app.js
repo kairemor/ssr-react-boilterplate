@@ -19,10 +19,8 @@ export default function App() {
           Francais
         </button>
       </nav>
-      <header className="App-header">
-        <p>
-          <h3>{t('greeting')}</h3>  <h3>{t('thank')}</h3>
-        </p>
+      <header>
+        <h3>{t('greeting')}</h3>  <h3>{t('thank')}</h3>
       </header>
     </div>
   )

@@ -1,10 +1,9 @@
 import React, { Suspense } from 'react';
 import { hydrate } from 'react-dom';
 import { Provider } from 'react-redux';
-import { I18nextProvider } from 'react-i18next';
-import configureStore from './redux/configureStore';
+import configureStore from '../redux/configureStore';
 import App from './components/app';
-import './i18n';
+import '../i18n';
 
 // Read the state sent with markup
 const state = window.__STATE__;

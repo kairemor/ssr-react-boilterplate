@@ -1,19 +1,21 @@
 import express from 'express';
 import path from 'path';
-import template from './src/template';
-import ssr from './src/server';
+import template from './shared/template';
+import ssr from './server/server';
 
 
 const app = express();
 
 // Serving static files
-app.use('/assets', express.static(path.resolve(__dirname, 'assets')));
-app.use('/media', express.static(path.resolve(__dirname, 'media')));
+app.use('', express.static(path.resolve(__dirname, '../assets')));
+app.use('/build', express.static(path.resolve(__dirname, '../build')));
 
 // hide powered by express
 app.disable('x-powered-by');
 // start the server
-app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || 3000, () => {
+  console.log(`running at : http://localhost:3000`);
+});
 
 let initialState = {
   isFetching: false

@@ -3,16 +3,22 @@ const path = require('path');
 module.exports = {
   mode: 'development',
   entry: {
-    client: './src/client.js',
-    bundle: './src/bundle.js'
+    client: './src/client/client.js',
+    bundle: './src/shared/bundle.js'
+  },
+  devServer: {
+    contentBase: path.resolve(__dirname, 'build/dist'),
+    hot: true,
   },
   output: {
-    path: path.resolve(__dirname, 'assets'),
+    path: path.resolve(__dirname, 'build/dist'),
     filename: "[name].js"
   },
   module: {
-    rules: [
-      { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" }
-    ]
- }
-}
+    rules: [{
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: "babel-loader"
+    }]
+  }
+};

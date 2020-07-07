@@ -11,8 +11,8 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 // for passing in lng and translations on init
 
 
-import frLangage from '../assets/locales/fr-FR/translation.json';
-import enLangage from '../assets/locales/en-US/translation.json';
+import frLanguage from '../assets/locales/fr-FR/translation.json';
+import enLanguage from '../assets/locales/en-US/translation.json';
 
 i18n
   // load translation using http -> see /public/locales (i.e. https://github.com/i18next/react-i18next/tree/master/example/react/public/locales)
@@ -33,18 +33,14 @@ i18n
       // for all available options read the backend's repository readme file
       loadPath: '/locales/{{lng}}/{{ns}}.json',
     },
-    // backend: {
-    //   // for all available options read the backend's repository readme file
-    //   loadPath: path.join(__dirname, '..', 'assets/locales/{{lng}}/{{ns}}.json'),
-    // },
 
     partialBundledLanguages: true,
     resources: {
       fr: {
-        translation: frLangage
+        translation: frLanguage
       },
       en: {
-        translation: enLangage
+        translation: enLanguage
       },
     },
     parseMissingKeyHandler: (missing) => {
