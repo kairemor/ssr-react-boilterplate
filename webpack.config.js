@@ -4,7 +4,7 @@ module.exports = {
   mode: 'development',
   entry: {
     client: './src/client/client.js',
-    bundle: './src/shared/bundle.js'
+    bundle: './src/shared/bundle.js',
   },
   devServer: {
     contentBase: path.resolve(__dirname, 'build/dist'),
@@ -12,13 +12,15 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'build/dist'),
-    filename: "[name].js"
+    filename: '[name].js',
   },
   module: {
-    rules: [{
-      test: /\.js$/,
-      exclude: /node_modules/,
-      loader: "babel-loader"
-    }]
-  }
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+      },
+    ],
+  },
 };

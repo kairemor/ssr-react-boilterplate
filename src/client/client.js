@@ -21,10 +21,10 @@ const store = configureStore(state);
  */
 
 hydrate(
-  <Provider store={store} >
-    <Suspense fallback={(<div>Loading</div>)}>
+  <Provider store={store}>
+    <Suspense fallback={<div>Loading</div>}>
       <App />
     </Suspense>
   </Provider>,
   document.querySelector('#app')
-)
+);

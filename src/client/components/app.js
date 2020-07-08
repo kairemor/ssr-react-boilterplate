@@ -11,17 +11,19 @@ export default function App() {
 
   return (
     <div>
-      <nav style={{ width: '100%', padding: '2rem 0', backgroundColor: 'gray' }}>
-        <button onClick={() => handleClick('en')} >
+      <nav
+        style={{ width: '100%', padding: '2rem 0', backgroundColor: 'gray' }}
+      >
+        <button type="button" onClick={() => handleClick('en')}>
           English
         </button>
-        <button onClick={() => handleClick('fr')} >
+        <button type="button" onClick={() => handleClick('fr')}>
           Francais
         </button>
       </nav>
       <header>
-        <h3>{t('greeting')}</h3>  <h3>{t('thank')}</h3>
+        <h3>{t('greeting')}</h3> <h3>{t('thank')}</h3>
       </header>
     </div>
-  )
+  );
 }

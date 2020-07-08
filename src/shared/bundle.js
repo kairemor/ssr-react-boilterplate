@@ -5,12 +5,12 @@ import configureStore from '../redux/configureStore';
 import App from '../client/components/app';
 import '../i18n';
 
-// Create a fresh store 
+// Create a fresh store
 const store = configureStore();
 
 render(
-  <Provider store={store} >
+  <Provider store={store}>
     <App />
   </Provider>,
   document.querySelector('#app')
-)
+);

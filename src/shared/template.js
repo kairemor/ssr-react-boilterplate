@@ -1,5 +1,5 @@
 // html skeleton provider
-export default function template(title, initialState = {}, content = "") {
+export default function template(title, initialState = {}, content = '') {
   let scripts = ''; // Dynamically ship scripts based on render type
   if (content) {
     scripts = ` <script>
@@ -10,7 +10,7 @@ export default function template(title, initialState = {}, content = "") {
   } else {
     scripts = ` <script src="build/dist/bundle.js"> </script> `;
   }
-  let page = `<!DOCTYPE html>
+  const page = `<!DOCTYPE html>
               <html lang="en">
               <head>
                 <meta charset="utf-8">
@@ -27,6 +27,5 @@ export default function template(title, initialState = {}, content = "") {
                 ${scripts}
               </body>
               `;
-
   return page;
 }
