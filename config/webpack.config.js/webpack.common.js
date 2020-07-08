@@ -6,11 +6,11 @@ module.exports = {
     bundle: './src/shared/bundle.js',
   },
   devServer: {
-    contentBase: path.resolve(__dirname, 'build/'),
+    contentBase: path.resolve(__dirname, '..', '..', 'build/'),
     hot: true,
   },
   output: {
-    path: path.resolve(__dirname, 'build/'),
+    path: path.resolve(__dirname, '..', '..', 'build/'),
     filename: '[name].js',
   },
   module: {

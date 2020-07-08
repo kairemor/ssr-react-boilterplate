@@ -5,10 +5,10 @@ export default function template(title, initialState = {}, content = '') {
     scripts = ` <script>
                   window.__STATE__ = ${JSON.stringify(initialState)}
                 </script>
-                <script src="build/dist/client.js"></script>
+                <script src="build/client.js"></script>
                 `;
   } else {
-    scripts = ` <script src="build/dist/bundle.js"> </script> `;
+    scripts = ` <script src="build/bundle.js"> </script> `;
   }
   const page = `<!DOCTYPE html>
               <html lang="en">
