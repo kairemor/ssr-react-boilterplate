@@ -10,7 +10,7 @@ module.exports = {
     hot: true,
   },
   output: {
-    path: path.resolve(__dirname, 'build/dist'),
+    path: path.resolve(__dirname, 'build/'),
     filename: '[name].js',
   },
   module: {
