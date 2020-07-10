@@ -1,8 +1,9 @@
 import React, { Suspense } from 'react';
 import { hydrate } from 'react-dom';
 import { Provider } from 'react-redux';
-import configureStore from '../redux/configureStore';
-import App from './components/app';
+// import { Router } from 'react-router-dom';
+import configureStore from '../shared/store/app/configureStore';
+import App from '../shared/app';
 import '../i18n';
 
 // Read the state sent with markup

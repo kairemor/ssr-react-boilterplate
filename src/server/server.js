@@ -1,9 +1,8 @@
 import React from 'react';
 import { renderToString } from 'react-dom/server';
-
 import { Provider } from 'react-redux';
-import configureStore from '../redux/configureStore';
-import App from '../client/components/app';
+import configureStore from '../shared/store/app/configureStore';
+import App from '../shared/app';
 import '../i18n';
 
 export default function render(initialState) {

@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    client: './src/client/client.js',
+    client: './src/client/index.js',
     bundle: './src/shared/bundle.js',
   },
   devServer: {
@@ -16,7 +16,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
       },
