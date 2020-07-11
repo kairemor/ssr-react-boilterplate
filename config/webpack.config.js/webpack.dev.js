@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const path = require('path');
 const CircularDependencyPlugin = require('circular-dependency-plugin');
 const common = require('./webpack.common.js');
 
@@ -6,7 +7,9 @@ module.exports = {
   ...common,
   mode: 'development',
   devServer: {
-    contentBase: '../../build',
+    contentBase: path.resolve(__dirname, '..', '..', 'build/'),
+    compress: true,
+    port: 3000,
   },
   // Add development plugins
   plugins: [
@@ -16,8 +19,8 @@ module.exports = {
       failOnError: false, // show a warning when there is a circular dependency
     }),
   ],
-  devtool: 'eval-source-map',
 
+  devtool: 'inline-source-map',
   performance: {
     hints: false,
   },

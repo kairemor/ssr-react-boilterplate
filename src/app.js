@@ -6,6 +6,7 @@ import middleware from 'i18next-express-middleware';
 import nodeFsBackend from 'i18next-node-fs-backend';
 import template from './shared/template';
 import ssr from './server/server';
+import logger from './server/logger';
 
 const app = express();
 
@@ -41,8 +42,11 @@ app.options('*', cors());
 // hide powered by express
 app.disable('x-powered-by');
 // start the server
-app.listen(process.env.PORT || 3000, () => {
-  console.log(`running at : http://localhost:3000`);
+app.listen(process.env.PORT || 3000, (err) => {
+  if (err) {
+    return logger.error(err.message);
+  }
+  return logger.appStarted(process.env.PORT || 3000, 'localhost');
 });
 
 const initialState = {
