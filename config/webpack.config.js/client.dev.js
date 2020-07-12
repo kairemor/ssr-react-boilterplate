@@ -1,10 +1,10 @@
 const webpack = require('webpack');
 const path = require('path');
 const CircularDependencyPlugin = require('circular-dependency-plugin');
-const common = require('./webpack.common.js');
+const baseConfig = require('./client.base');
 
 module.exports = {
-  ...common,
+  ...baseConfig,
   mode: 'development',
   devServer: {
     contentBase: path.resolve(__dirname, '..', '..', 'build/'),
