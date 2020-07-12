@@ -15,7 +15,7 @@ export default function App() {
         style={{ width: '100%', padding: '2rem 0', backgroundColor: 'gray' }}
       >
         <button type="button" onClick={() => handleClick('en')}>
-          English
+          English 3
         </button>
         <button type="button" onClick={() => handleClick('fr')}>
           Francais
