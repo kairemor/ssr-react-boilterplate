@@ -5,11 +5,10 @@ module.exports = {
   target: 'node',
   entry: {
     client: './src/client/index.js',
-    bundle: './src/shared/bundle.js',
   },
   output: {
     path: path.resolve(__dirname, '..', '..', 'build/'),
-    filename: '[name].js',
+    filename: 'server/server.js',
   },
   module: {
     rules: [
