@@ -7,9 +7,13 @@ module.exports = {
   ...baseConfig,
   mode: 'development',
   devServer: {
-    contentBase: path.resolve(__dirname, '..', '..', 'build/'),
+    contentBase: path.resolve(__dirname, '..', '..', 'public/'),
     compress: true,
     port: 3000,
+  },
+  output: {
+    path: path.resolve(__dirname, '..', '..', 'public/'),
+    filename: 'client/client.js',
   },
   // Add development plugins
   plugins: [

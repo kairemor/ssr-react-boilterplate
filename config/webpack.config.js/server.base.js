@@ -8,7 +8,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, '..', '..', 'build/'),
-    filename: 'server/server.js',
+    filename: 'server/bundle.js',
   },
   module: {
     rules: [

@@ -4,9 +4,9 @@ import cors from 'cors';
 import i18next from 'i18next';
 import middleware from 'i18next-express-middleware';
 import nodeFsBackend from 'i18next-node-fs-backend';
-import template from './shared/template';
-import ssr from './server/server';
-import logger from './server/logger';
+import template from '../shared/template';
+import ssr from './server';
+import logger from './logger';
 
 const app = express();
 
@@ -23,7 +23,7 @@ i18next
     lowerCaseLng: true,
     preload: ['en'],
     backend: {
-      loadPath: path.join(`${__dirname}../assets/locales/{{lng}}/{{ns}}.json`),
+      loadPath: path.join(`${__dirname}../public/locales/{{lng}}/{{ns}}.json`),
     },
     useCookie: false,
   });
@@ -54,7 +54,7 @@ const initialState = {
 };
 
 // Serving static files
-app.use('', express.static(path.resolve(__dirname, '../assets')));
+app.use('', express.static(path.resolve(__dirname, '../public')));
 
 // server rendered home page
 app.get('/', (req, res) => {

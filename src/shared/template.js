@@ -5,7 +5,7 @@ export default function template(title, initialState = {}, content = '') {
     scripts = ` <script>
                   window.__STATE__ = ${JSON.stringify(initialState)}
                 </script>
-                <script src="build/client/server.js"></script>
+                <script src="build/server/bundle.js"></script>
                 `;
   } else {
     scripts = ` <script src="build/client/client.js"> </script> `;
