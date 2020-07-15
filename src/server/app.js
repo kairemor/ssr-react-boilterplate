@@ -10,7 +10,7 @@ import logger from './logger';
 
 const app = express();
 
-app.use('/build', express.static(path.resolve(__dirname, '../build')));
+app.use('/build', express.static(path.resolve(__dirname, '../../build')));
 
 // Init i18n
 i18next

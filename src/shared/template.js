@@ -15,7 +15,6 @@ export default function template(title, initialState = {}, content = '') {
               <head>
                 <meta charset="utf-8">
                 <title> ${title} </title>
-                <link href="style.css" rel="stylesheet">
               </head>
               <body>
                 <div class="content">
