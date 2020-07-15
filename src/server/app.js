@@ -59,19 +59,17 @@ const initialState = {
 // Serving static files
 app.use('', express.static(path.resolve(__dirname, '../../public')));
 
-// server rendered home page
-
-console.log(process.env.mode);
 if (process.env.mode === 'SPA') {
-  // render the spa app
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../../build/index.html'));
-  });
-} else {
   app.get('/', (req, res) => {
-    const { preloadedState, content } = ssr(initialState);
-    const response = template('Server Rendered Page', preloadedState, content);
+    const response = template('Client Side Rendered page');
     res.setHeader('Cache-Control', 'assets, max-age=604800');
     res.send(response);
   });
 }
+// server rendered home page
+app.get('/', (req, res) => {
+  const { preloadedState, content } = ssr(initialState);
+  const response = template('Server Rendered Page', preloadedState, content);
+  res.setHeader('Cache-Control', 'assets, max-age=604800');
+  res.send(response);
+});
