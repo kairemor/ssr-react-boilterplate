@@ -18,7 +18,7 @@
     "build": "yarn build:server && yarn build:client",
     "start": "yarn build && node src/index.js",
     "//": "SPA",
-    "start:spa:dev": "yarn build:client:dev && nodemon src/index.js",
+    "start:spa:dev": "webpack-dev-server --open --config=config/webpack.config.js/client.dev.js",
     "start:spa": "yarn build:client && node src/index.js"
   },
   "author": "KMTC",
