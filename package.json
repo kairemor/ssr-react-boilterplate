@@ -8,9 +8,8 @@
     "lint:js": "eslint --ext .js,.jsx src/",
     "lint:css": "stylelint src/*",
     "///": "SSR Development",
-    "build:client:dev": "webpack  --config config/webpack.config.js/client.dev.js",
     "build:server:dev": "webpack  --config config/webpack.config.js/server.dev.js",
-    "build:dev": "yarn build:client:dev && yarn build:server:dev",
+    "build:dev": "yarn build:server:dev",
     "start:dev": "yarn build:dev && nodemon src/index.js",
     "////": "SSR Production",
     "build:server": "webpack --config config/webpack.config.js/server.prod.js",
@@ -19,7 +18,7 @@
     "start": "yarn build && node src/index.js",
     "//": "SPA",
     "start:spa:dev": "webpack-dev-server --open --config=config/webpack.config.js/client.dev.js",
-    "start:spa": "yarn build:client && node src/index.js"
+    "start:spa": "yarn build:client && mode=SPA node src/index.js"
   },
   "author": "KMTC",
   "license": "MIT",
