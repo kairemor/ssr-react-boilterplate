@@ -10,7 +10,7 @@ import logger from './logger';
 
 const app = express();
 
-app.use('', express.static(path.resolve(__dirname, '../../build')));
+app.use('/build', express.static(path.resolve(__dirname, '../../build')));
 
 // Init i18n
 i18next
@@ -23,10 +23,7 @@ i18next
     lowerCaseLng: true,
     preload: ['en'],
     backend: {
-      loadPath: path.resolve(
-        __dirname,
-        '../../public/locales/{{lng}}/{{ns}}.json'
-      ),
+      loadPath: path.join(`${__dirname}../public/locales/{{lng}}/{{ns}}.json`),
     },
     useCookie: false,
   });
@@ -57,7 +54,7 @@ const initialState = {
 };
 
 // Serving static files
-app.use('', express.static(path.resolve(__dirname, '../../public')));
+app.use('', express.static(path.resolve(__dirname, '../public')));
 
 if (process.env.mode) {
   // Pure client side rendered page
