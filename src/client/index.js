@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { hydrate } from 'react-dom';
+import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 // import { Router } from 'react-router-dom';
 import configureStore from '../shared/store/app/configureStore';
@@ -21,7 +21,14 @@ const store = configureStore(state);
  * react comments to identify elements and more.
  */
 
-hydrate(
-  <Provider store={store}><Suspense fallback={<div>Loading</div>}><App /></Suspense></Provider>,
-  document.querySelector('#app')
+const renderMethod = module.hot ? ReactDOM.hydrate : ReactDOM.render;
+
+const app = (
+  <Provider store={store}>
+    <Suspense fallback={<div>Loading</div>}>
+      <App />
+    </Suspense>
+  </Provider>
 );
+
+renderMethod(app, document.querySelector('#app'));

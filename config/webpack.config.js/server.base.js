@@ -97,7 +97,7 @@ module.exports = {
       patterns: [
         {
           from: path.resolve(__dirname, '../../public/locales'),
-          to: path.resolve(__dirname, '../../build/locales'),
+          to: path.resolve(__dirname, '../../build/server/locales'),
         },
       ],
     }),

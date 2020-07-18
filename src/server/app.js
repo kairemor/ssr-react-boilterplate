@@ -53,7 +53,7 @@ const initialState = {
 };
 
 // Serving static files
-app.use('', express.static(path.resolve(__dirname, '../../build')));
+app.use('', express.static(path.resolve(__dirname, '../../build/server')));
 
 if (process.env.mode) {
   // Pure client side rendered page
