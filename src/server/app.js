@@ -11,7 +11,6 @@ import logger from './logger';
 const app = express();
 
 app.use('/build', express.static(path.resolve(__dirname, '../../build')));
-
 // Init i18n
 i18next
   .use(middleware.LanguageDetector)
@@ -54,7 +53,7 @@ const initialState = {
 };
 
 // Serving static files
-app.use('', express.static(path.resolve(__dirname, '../public')));
+app.use('', express.static(path.resolve(__dirname, '../../build')));
 
 if (process.env.mode) {
   // Pure client side rendered page
